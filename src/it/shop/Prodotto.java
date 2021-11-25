@@ -11,8 +11,11 @@ public class Prodotto {
 	private int iva;
 
 	// Method
-	public Prodotto() {
+	public Prodotto(String name, double price, int iva) {
 		this.id = randomId();
+		this.name = name;
+		this.price = price;
+		this.iva = iva;
 	}
 
 	public String getName() {
@@ -59,14 +62,14 @@ public class Prodotto {
 	}
 
 	// Calculate price + iva
-	public double setPriceWithIva() {
+	public double getPriceWithIva() {
 		double priceWithIva = this.price + ((this.price / 100) * iva);
 		return priceWithIva;
 
 	}
 
 	// Return string "id-name"
-	public String extendedName() {
+	public String getExtendedName() {
 		return this.id + "-" + this.name;
 
 	}
