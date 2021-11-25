@@ -10,7 +10,7 @@ public class Prodotto {
 	private double price;
 	private int iva;
 
-	// Method
+	// Methods
 	public Prodotto(String name, double price, int iva) {
 		this.id = randomId();
 		this.name = name;
@@ -61,10 +61,14 @@ public class Prodotto {
 
 	}
 
+	public double ivaCalculator(double iva) {
+		return (this.price / 100) * iva;
+
+	}
+
 	// Calculate price + iva
 	public double getPriceWithIva() {
-		double priceWithIva = this.price + ((this.price / 100) * iva);
-		return priceWithIva;
+		return this.price + ivaCalculator(this.iva);
 
 	}
 
